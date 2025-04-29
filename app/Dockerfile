@@ -1,0 +1,6 @@
+FROM node:20-alpine
+WORKDIR "/root/app"
+COPY . .
+RUN apk update && apk upgrade
+RUN yarn
+CMD ["sh", "-c", "yarn start"]
