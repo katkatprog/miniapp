@@ -7,5 +7,9 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% memoList.forEach(function (memoInfo, key) { %>
+      <h1><%= memoInfo.title %></h1>
+      <p><%= memoInfo.content %></p>
+    <% }); %>
   </body>
 </html>

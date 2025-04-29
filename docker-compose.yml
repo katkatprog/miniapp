@@ -23,7 +23,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
-      MYSQL_ROOT_USER: docker
       MYSQL_DATABASE: mydb
       TZ: 'Asia/Tokyo'
     volumes:
