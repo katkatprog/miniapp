@@ -23,8 +23,11 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
-    # volumes:
-    #   - db_store:/var/lib/postgresql/data
+      MYSQL_ROOT_USER: docker
+      MYSQL_DATABASE: mydb
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - db_store:/var/lib/mysql
     ports:
       - "3306:3306"
 
