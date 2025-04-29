@@ -17,8 +17,12 @@
 
     <h1>投稿一覧</h1>
     <% memoList.forEach(function (memoInfo, key) { %>
-      <h2><%= memoInfo.title %></h2>
-      <p><%= memoInfo.content %></p>
+      <form action="/delete" method="post">
+        <b><%= memoInfo.title %></b>
+        <button type="submit">削除</button>
+        <input type="text" name="id" value=<%= memoInfo.id %> hidden>
+        <p><%= memoInfo.content %></p>
+      </form>
     <% }); %>
   </body>
 </html>

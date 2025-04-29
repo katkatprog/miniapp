@@ -27,4 +27,18 @@ router.post('/', async function(req, res, next) {
   res.redirect('/');
 });
 
+/* Delete home page. */
+router.post('/delete', async function(req, res, next) {
+  console.log(req.body.id);
+
+  const prisma = new PrismaClient();
+  await prisma.memo.delete({
+    where: {
+      id: Number(req.body.id)
+    }
+  });
+  prisma.$disconnect();
+  res.redirect('/');
+});
+
 module.exports = router;
