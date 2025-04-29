@@ -1,0 +1,5 @@
+FROM node:20-alpine
+WORKDIR "/workspace/app"
+RUN apk update && apk upgrade
+RUN apk add vim git
+RUN yarn global add express-generator 
