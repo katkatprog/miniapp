@@ -11,4 +11,20 @@ router.get('/', async function(req, res, next) {
   res.render('index', { title: 'Express', memoList });
 });
 
+/* POST home page. */
+router.post('/', async function(req, res, next) {
+  console.log(req.body.title);
+  console.log(req.body.content);
+
+  const prisma = new PrismaClient();
+  await prisma.memo.create({
+    data: {
+      title: req.body.title,
+      content: req.body.content
+    }
+  });
+  prisma.$disconnect();
+  res.redirect('/');
+});
+
 module.exports = router;
